@@ -1,5 +1,9 @@
+-- Dumb plugin to show Wakatime time in the status bar.
+-- Stupid how the actual plugin doesn't have this built in!
+--
+-- Requires the Wakatime CLI to be installed and configured.
+
 local M = {}
-local T = "Loading..."
 M.time = "loading..."
 
 local function update_wakatime()
@@ -22,7 +26,9 @@ function M.component()
     return M.time
 end
 
+---@diagnostic disable-next-line: undefined-field
 local timer = vim.loop.new_timer()
+
 timer:start(
     0,
     30000,
