@@ -31,6 +31,18 @@ require("lazy").setup({
         },
         { "wakatime/vim-wakatime", lazy = false },
         { "github/copilot.vim", lazy = false },
+        {
+            "attilarepka/header.nvim",
+            config = function()
+                require("header").setup({
+                    author = "Damien Boisvert",
+                    date_created = true,
+                    date_created_fmt = "%Y-%m-%d %H:%M:%S",
+                    date_modified = true,
+                    date_modified_fmt = "%Y-%m-%d %H:%M:%S",
+                })
+            end,
+        },
         -- import/override with your plugins
         { import = "plugins" },
     },
